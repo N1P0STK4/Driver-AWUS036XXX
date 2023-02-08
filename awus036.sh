@@ -1,8 +1,6 @@
 #!/bin/bash/
 
-whoami_id=$(id | cut -d "(" -f1 | cut -d "=" -f2)
-
-if [ "$(echo $whoami_id)" == "0" ] ;then
+if [ "$(id -u)" == "0" ] ;then
 	apt install realtek-rtl88xxau-dkms -y
 	apt install dkms
 	git clone https://github.com/aircrack-ng/rtl8812au
